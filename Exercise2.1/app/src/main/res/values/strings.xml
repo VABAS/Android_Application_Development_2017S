@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Exercise2</string>
+
+    <!-- Radio button description strings -->
+    <string name="Radio1_text">Meatballs</string>
+    <string name="Radio2_text">Chicken</string>
+    <string name="Radio3_text">Fish</string>
+    <string name="Radio4_text">Steak</string>
+    <string name="Radio5_text">Carrots</string>
+
+    <!-- Select button text -->
+    <string name="Select_button_text">Select</string>
+</resources>
