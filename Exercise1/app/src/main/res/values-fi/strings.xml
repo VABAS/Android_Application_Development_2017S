@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Exercise1</string>
+    <string name="hello">Moikka maalima!</string>
+    <string name="hello_land">Moikka vaakatasone maalima!</string>
+</resources>
