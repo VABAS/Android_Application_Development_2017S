@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Exercise5</string>
+    <string name="show_notification">Show public notification</string>
+    <string name="show_dialog">Dialog</string>
+    <string name="dialog_title">This is dialog</string>
+    <string name="dialog_text">Cool isn\'t it?</string>
+    <string name="dialog_yes">This is yes button</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="show_toast">Show toast</string>
+</resources>
