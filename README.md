@@ -13,3 +13,6 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
  * [Launch a Map with Implicit Intent](Exercise3)
  * [ListView with custom layout](Exercise4)
 
+## Viikko 37
+ * [Something "nice" with dialogs/menus and notifications](Exercise5)
+
