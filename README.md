@@ -16,3 +16,6 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
 ## Viikko 37
  * [Something "nice" with dialogs/menus and notifications](Exercise5)
 
+## Viikko 38
+ * [Load images from internet](Exercise6)
+
