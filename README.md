@@ -19,3 +19,5 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
 ## Viikko 38
  * [Load images from internet](Exercise6)
  * [Play mp3 files from device](Exercise7)
+ * [Glide demo](Exercise8)
+

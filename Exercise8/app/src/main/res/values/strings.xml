@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Exercise8</string>
+    <string name="write_url_text">Write url:</string>
+    <string name="load_image_button_text">Load image</string>
+</resources>
