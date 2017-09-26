@@ -20,4 +20,8 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
  * [Load images from internet](Exercise6)
  * [Play mp3 files from device](Exercise7)
  * [Glide demo](Exercise8)
+ * ~~Youtube api demo~~ (Ei tehty)
+
+## Viikko 39
+ * [Saving  and Restoring Activity  State](Exercise10)
 
