@@ -24,4 +24,5 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
 
 ## Viikko 39
  * [Saving  and Restoring Activity  State](Exercise10)
+ * [Shopping List](Exercise11)
 
