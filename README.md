@@ -23,5 +23,5 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
  * ~~Youtube api demo~~ (Ei tehty)
 
 ## Viikko 39
- * [Saving  and Restoring Activity  State](Exercise10)
+ * [Saving and Restoring Activity State](Exercise10)
 
