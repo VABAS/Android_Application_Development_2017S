@@ -3,4 +3,5 @@
     <string name="new_product_name_text">Product:</string>
     <string name="new_product_count_text">Count:</string>
     <string name="new_product_price_text">Price:</string>
+    <string name="add_product_button">Add product</string>
 </resources>
