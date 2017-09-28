@@ -1,5 +1,6 @@
 package net.net.siekkiset.jesse.androidcourse2017s.exercise11;
 
+import android.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void addProductButtonClicked(View view) {
+        AddNewProductDialog addNewProductDialog = new AddNewProductDialog();
+        addNewProductDialog.show(getFragmentManager(), "m");
+    }
+
+    protected void addProduct() {
 
     }
 
