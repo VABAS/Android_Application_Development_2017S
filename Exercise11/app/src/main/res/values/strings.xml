@@ -5,4 +5,9 @@
     <string name="new_product_price_text">Price:</string>
     <string name="add_product_button">Add product</string>
     <string name="cancel_button">Cancel</string>
+    <string name="add_product_heading">Give information for new product:</string>
+    <string name="adding_canceled_notify">Adding product canceled</string>
+    <string name="count_format_error">Invalid count value!</string>
+    <string name="price_format_error">Invalid price value!</string>
+    <string name="product_added_notify">Product added</string>
 </resources>
