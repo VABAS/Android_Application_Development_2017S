@@ -15,7 +15,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<Product> demoProducts = new ArrayList<>();
     SQLiteDatabase shoppingListDatabase;
 
     @Override
@@ -23,17 +22,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         shoppingListDatabase = initDbConnection();
-
-        Cursor c = shoppingListDatabase.rawQuery("SELECT * FROM shoppinglist", null);
-        while(c.moveToNext()) {
-            demoProducts.add(new Product(c.getString(0), c.getInt(1), c.getFloat(2)));
-        }
-        c.close();
         refreshListView();
 
     }
 
     private void refreshListView() {
+        Cursor c = shoppingListDatabase.rawQuery("SELECT name,count,price FROM shoppinglist", null);
+        ArrayList<Product> demoProducts = new ArrayList<>();
+        while(c.moveToNext()) {
+            demoProducts.add(new Product(c.getString(0), c.getInt(1), c.getFloat(2)));
+        }
+        c.close();
         ArrayAdapter<Product> adapter = new ProductAdapter(this, demoProducts);
         ListView listView = (ListView)findViewById(R.id.shoppingItemListView);
         listView.setAdapter(adapter);
@@ -44,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
     }
     protected SQLiteDatabase initDbConnection(boolean addDemoEntries) {
         SQLiteDatabase db = openOrCreateDatabase("soppingListDb", MODE_PRIVATE, null);
-        db.execSQL("CREATE TABLE IF NOT EXISTS shoppinglist(name VARCHAR, count INTEGER, price REAL);");
+        //db.execSQL("drop table shoppinglist");
+        db.execSQL(
+                "CREATE TABLE IF NOT EXISTS shoppinglist(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, count INTEGER, price REAL);"
+        );
         if (addDemoEntries) {
             db.execSQL("DELETE FROM shoppinglist;");
             db.execSQL("INSERT INTO shoppinglist values('Milk', 3, 1.75);");
@@ -57,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     protected void addProductButtonClicked(View view) {
         final Dialog newProductDialog = new Dialog(this);
         newProductDialog.setContentView(R.layout.add_product_dialog);
-        Button addButton = (Button)newProductDialog.findViewById(R.id.addButton);
+        final Button addButton = (Button)newProductDialog.findViewById(R.id.addButton);
         Button cancelButton = (Button)newProductDialog.findViewById(R.id.cancelButton);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,16 +97,9 @@ public class MainActivity extends AppCompatActivity {
                     ).show();
                     return;
                 }
-
-                shoppingListDatabase.execSQL(
-                        "INSERT INTO shoppinglist values('"+name+"', "+count+", "+price+");"
-                );
+                addProduct(new Product(name, count, price));
                 refreshListView();
                 newProductDialog.dismiss();
-                Toast.makeText(
-                        getBaseContext(), R.string.product_added_notify, Toast.LENGTH_SHORT
-                ).show();
-
             }
         });
         cancelButton.setOnClickListener(new View.OnClickListener() {
@@ -122,11 +117,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void addProduct(Product product) {
-        shoppingListDatabase.execSQL("INSERT INTO shoppinglist VALUES('"
-                                     + product.name +"', "
-                                     + product.count +", "
-                                     + product.price +");");
+        shoppingListDatabase.execSQL("INSERT INTO shoppinglist VALUES(null, '"
+                                     + product.name + "', "
+                                     + product.count + ", "
+                                     + product.price + ");");
         refreshListView();
+        // Selecting sum of prices multiplied by counts with applicable SQL-query.
+        Cursor c = shoppingListDatabase.rawQuery("SELECT SUM(price*count) FROM shoppinglist", null);
+        c.moveToFirst();
+        Toast.makeText(
+                getBaseContext(), R.string.product_added_notify, Toast.LENGTH_SHORT
+        ).show();
+        Toast.makeText(
+                getBaseContext(),
+                R.string.total_text + ": " + String.valueOf(c.getFloat(0)),
+                Toast.LENGTH_SHORT
+        ).show();
     }
 
     protected void deleteProductClicked(View view) {

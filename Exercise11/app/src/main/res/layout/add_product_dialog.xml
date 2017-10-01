@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <TableRow>
+    <TableRow
+        android:layout_width="match_parent">
 
         <TextView
             android:id="@+id/textView"
@@ -24,9 +25,9 @@
 
         <AutoCompleteTextView
             android:id="@+id/nameAutoCompleteTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="100pt"
             android:layout_height="wrap_content"
-            android:text="AutoCompleteTextView" />
+            android:text="" />
     </TableRow>
     <TableRow>
         <TextView
@@ -37,9 +38,9 @@
 
         <AutoCompleteTextView
             android:id="@+id/countAutoCompleteTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="100pt"
             android:layout_height="wrap_content"
-            android:text="AutoCompleteTextView" />
+            android:text="" />
     </TableRow>
     <TableRow>
         <TextView
@@ -50,9 +51,9 @@
 
         <AutoCompleteTextView
             android:id="@+id/priceAutoCompleteTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="100pt"
             android:layout_height="wrap_content"
-            android:text="AutoCompleteTextView" />
+            android:text="" />
     </TableRow>
     <TableRow>
         <android.support.constraint.ConstraintLayout
