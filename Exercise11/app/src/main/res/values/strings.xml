@@ -11,4 +11,7 @@
     <string name="price_format_error">Invalid price value!</string>
     <string name="product_added_notify">Product added</string>
     <string name="total_text">Total</string>
+    <string name="confirm_delete_title">Confirm deletion</string>
+    <string name="confirm_delete_text">Do you want to delete item</string>
+
 </resources>

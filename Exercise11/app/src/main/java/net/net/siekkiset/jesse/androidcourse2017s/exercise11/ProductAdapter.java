@@ -37,7 +37,7 @@ public class ProductAdapter extends ArrayAdapter<Product> {
             priceTextView.setText(String.format("%.2f", item.price));
             countTextView.setText(String.valueOf(item.count));
         }
-
+        convertView.setTag(item.dbId);
         return convertView;
     }
 }

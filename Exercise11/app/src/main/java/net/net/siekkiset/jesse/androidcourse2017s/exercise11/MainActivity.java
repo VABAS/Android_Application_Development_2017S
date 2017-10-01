@@ -1,11 +1,14 @@
 package net.net.siekkiset.jesse.androidcourse2017s.exercise11;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -27,15 +30,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void refreshListView() {
-        Cursor c = shoppingListDatabase.rawQuery("SELECT name,count,price FROM shoppinglist", null);
+        Cursor c = shoppingListDatabase.rawQuery("SELECT id,name,count,price FROM shoppinglist", null);
         ArrayList<Product> demoProducts = new ArrayList<>();
         while(c.moveToNext()) {
-            demoProducts.add(new Product(c.getString(0), c.getInt(1), c.getFloat(2)));
+            demoProducts.add(
+                    new Product(c.getInt(0),c.getString(1), c.getInt(2), c.getFloat(3))
+            );
         }
         c.close();
         ArrayAdapter<Product> adapter = new ProductAdapter(this, demoProducts);
         ListView listView = (ListView)findViewById(R.id.shoppingItemListView);
         listView.setAdapter(adapter);
+        listView.setLongClickable(true);
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+                final String dbId = String.valueOf(view.getTag());
+                shoppingListDatabase.execSQL("DELETE FROM shoppinglist WHERE id=" + dbId);
+                refreshListView();
+                return true;
+            }
+        });
     }
 
     protected SQLiteDatabase initDbConnection() {
@@ -97,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                     ).show();
                     return;
                 }
-                addProduct(new Product(name, count, price));
+                addProduct(new Product(-1, name, count, price));
                 refreshListView();
                 newProductDialog.dismiss();
             }
