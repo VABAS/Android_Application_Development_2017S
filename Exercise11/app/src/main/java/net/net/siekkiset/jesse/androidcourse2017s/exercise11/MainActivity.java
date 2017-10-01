@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         return initDbConnection(false);
     }
     protected SQLiteDatabase initDbConnection(boolean addDemoEntries) {
-        SQLiteDatabase db = openOrCreateDatabase("soppingListDb", MODE_PRIVATE, null);
+        SQLiteDatabase db = openOrCreateDatabase("shoppingListDb", MODE_PRIVATE, null);
         //db.execSQL("drop table shoppinglist");
         db.execSQL(
                 "CREATE TABLE IF NOT EXISTS shoppinglist(id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, count INTEGER, price REAL);"
@@ -145,12 +145,8 @@ public class MainActivity extends AppCompatActivity {
         ).show();
         Toast.makeText(
                 getBaseContext(),
-                R.string.total_text + ": " + String.valueOf(c.getFloat(0)),
+                getString(R.string.total_text) + ": " + String.format("%.2f", c.getFloat(0)),
                 Toast.LENGTH_SHORT
         ).show();
-    }
-
-    protected void deleteProductClicked(View view) {
-
     }
 }
