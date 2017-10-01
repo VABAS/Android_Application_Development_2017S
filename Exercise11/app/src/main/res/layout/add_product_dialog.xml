@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TableRow
+        android:layout_width="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_span="2"
+            android:text="@string/add_product_heading"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/nameTextTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_product_name_text" />
+
+        <AutoCompleteTextView
+            android:id="@+id/nameAutoCompleteTextView"
+            android:layout_width="100pt"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/countTextTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_product_count_text" />
+
+        <AutoCompleteTextView
+            android:id="@+id/countAutoCompleteTextView"
+            android:layout_width="100pt"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:id="@+id/priceTextTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/new_product_price_text" />
+
+        <AutoCompleteTextView
+            android:id="@+id/priceAutoCompleteTextView"
+            android:layout_width="100pt"
+            android:layout_height="wrap_content"
+            android:text="" />
+    </TableRow>
+    <TableRow>
+        <android.support.constraint.ConstraintLayout
+
+            android:layout_span="2">
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/add_product_button"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <Button
+                android:id="@+id/cancelButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="@string/cancel_button"
+                app:layout_constraintLeft_toRightOf="@+id/addButton" />
+        </android.support.constraint.ConstraintLayout>
+    </TableRow>
+</TableLayout>
