@@ -26,3 +26,5 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
  * [Saving and Restoring Activity State](Exercise10)
  * [Shopping List](Exercise11)
 
+## Viikko 40
+ * [Load JSON data and display markers in Google Map](Exercise12)
