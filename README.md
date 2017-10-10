@@ -28,3 +28,7 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
 
 ## Viikko 40
  * [Load JSON data and display markers in Google Map](Exercise12)
+
+## Viikko 41
+ * [Golf Courses Wish List](Exercise13)
+
