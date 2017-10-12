@@ -31,4 +31,5 @@ Kuvakaappaukset projektikansion sisällä omassa kansiossaan nimeltä ```screens
 
 ## Viikko 41
  * [Golf Courses Wish List](Exercise13)
+ * [SGKY Golf Courses](Exercise14)
 
