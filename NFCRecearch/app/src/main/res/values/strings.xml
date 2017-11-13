@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NFCRecearch</string>
+    <string name="read_tag_button">Read tag</string>
+    <string name="write_tag_button">Write tag</string>
+    <string name="write_tag_heading">Write tag</string>
+    <string name="do_write_button">Write now</string>
+    <string name="approach_tag_text">Approach tag...</string>
+    <string name="nfc_not_supported_message">This device doesn\'t support NFC</string>
+</resources>
